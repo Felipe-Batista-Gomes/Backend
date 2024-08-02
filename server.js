@@ -1,11 +1,8 @@
-const express = require("express");
-const app = express();
+const app = require("./app");
+const http = require("http");
+const server = http.createServer(app);
 
-const PORT = 3000;
-
-// Middleware
-app.use(express.json());
-
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
   console.log(`Servidor está rodando na porta ${PORT}`);
 });
