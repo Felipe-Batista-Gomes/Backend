@@ -12,6 +12,7 @@ UserSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
 
   try {
+    // hashing password
     const hash = await bcrypt.hash(this.password, 8);
     this.password = hash;
     next();

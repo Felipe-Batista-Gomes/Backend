@@ -29,7 +29,7 @@ const login = async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return res.status(400).send("Por favor, inform um e-amail e uma senha");
+    return res.status(400).send("Por favor, informe um e-amail e uma senha");
   }
 
   try {
